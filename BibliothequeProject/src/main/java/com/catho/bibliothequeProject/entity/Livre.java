@@ -2,7 +2,6 @@ package com.catho.bibliothequeProject.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Livre {
@@ -11,10 +10,10 @@ public class Livre {
 	private String titre;
 	//International Standard Book Number
 	private String isbn;
+	private String categorie;
 	//nombre d'exemplaires
 	private int nbreExemp;
-    @ManyToOne
-	private Categorie categorie;
+ 
 	public Long getId() {
 		return id;
 	}
@@ -33,26 +32,30 @@ public class Livre {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+	
+	public String getCategorie() {
+		return categorie;
+	}
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
 	public int getNbreExemp() {
 		return nbreExemp;
 	}
 	public void setNbreExemp(int nbreExemp) {
 		this.nbreExemp = nbreExemp;
 	}
-	public Categorie getCategorie() {
-		return categorie;
-	}
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
-	public Livre(Long id, String titre, String isbn, int nbreExemp, Categorie categorie) {
+	public Livre(Long id, String titre, String isbn, String categorie, int nbreExemp) {
 		super();
 		this.id = id;
 		this.titre = titre;
 		this.isbn = isbn;
-		this.nbreExemp = nbreExemp;
 		this.categorie = categorie;
+		this.nbreExemp = nbreExemp;
 	}
+	
+	
+	
     
     
 	

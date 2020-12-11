@@ -2,7 +2,6 @@ package com.catho.bibliothequeProject.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Utilisateur {
@@ -10,6 +9,7 @@ public class Utilisateur {
 	private Long id;
 	private String prenom;
 	private String nom;
+	private String age;
 	private String cin;
 	private String email;
 	private String tel;
@@ -17,8 +17,6 @@ public class Utilisateur {
 	private String password;
 	// nombre d'emprunt des livre 
 	private int nbreEmpr;
-	@ManyToOne
-	private Categorie categorie;
 	
 	public Long getId() {
 		return id;
@@ -37,6 +35,13 @@ public class Utilisateur {
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
 	}
 	public String getCin() {
 		return cin;
@@ -68,32 +73,29 @@ public class Utilisateur {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Categorie getCategorie() {
-		return categorie;
-	}
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
+	
 	public int getNbreEmpr() {
 		return nbreEmpr;
 	}
 	public void setNbreEmpr(int nbreEmpr) {
 		this.nbreEmpr = nbreEmpr;
 	}
-	public Utilisateur(Long id, String prenom, String nom, String cin, String email, String tel, String login,
-			String password, int nbreEmpr, Categorie categorie) {
+	public Utilisateur(Long id, String prenom, String nom, String age, String cin, String email, String tel,
+			String login, String password, int nbreEmpr) {
 		super();
 		this.id = id;
 		this.prenom = prenom;
 		this.nom = nom;
+		this.age = age;
 		this.cin = cin;
 		this.email = email;
 		this.tel = tel;
 		this.login = login;
 		this.password = password;
 		this.nbreEmpr = nbreEmpr;
-		this.categorie = categorie;
 	}
+	
+	
 	
 	
 	
