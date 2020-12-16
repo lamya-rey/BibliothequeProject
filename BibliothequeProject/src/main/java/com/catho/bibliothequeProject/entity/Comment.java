@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Commentaire {
+public class Comment {
 	@Id
 	private Long id;
 	private String message;
