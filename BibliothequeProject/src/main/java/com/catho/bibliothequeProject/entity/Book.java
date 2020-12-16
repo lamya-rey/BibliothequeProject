@@ -1,7 +1,8 @@
 package com.catho.bibliothequeProject.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.*;
+
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,4 +16,10 @@ public class Book {
 	private String categorie;
 	//nombre d'exemplaires
 	private int nbreExemp;
+
+	@ManyToOne
+	@JoinColumn(name = "book_id", nullable = false)
+	private Comment comment;
+
+
 }

@@ -1,21 +1,13 @@
 package com.catho.bibliothequeProject.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @Entity
+@Data
+@NoArgsConstructor
 public class Comment {
 
 	@Column(nullable = false)
@@ -28,11 +20,7 @@ public class Comment {
 	@Column(nullable = true)
 	private String titre;
 	
-	@Column(nullable = false)
-	@ManyToOne
-	private Livre livre;
 
-	
 	 
 
 }
