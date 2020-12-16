@@ -1,40 +1,37 @@
 package com.catho.bibliothequeProject.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Commentaire {
+	
+	@Column(nullable = false)
 	@Id
 	private Long id;
+	
+	@Column(nullable = false)
 	private String message;
+	
+	@Column(nullable = true)
 	private String titre;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	public String getTitre() {
-		return titre;
-	}
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
+	@Column(nullable = false)
+	@ManyToOne
+	private Livre livre;
 	
-	public Commentaire(Long id, String message, String titre) {
-		super();
-		this.id = id;
-		this.message = message;
-		this.titre = titre;
-	}
 	
 	 
 
