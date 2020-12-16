@@ -1,23 +1,45 @@
 package com.catho.bibliothequeProject.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@Entity
 public class Utilisateur {
+
+	@Column(nullable = false)
 	@Id
 	private Long id;
+
+	@Column(nullable = false)
 	private String prenom;
+
+	@Column(nullable = false)
 	private String nom;
+
+	@Column(nullable = false)
 	private String age;
-	private String cin;
+
+	@Column(nullable = false)
 	private String email;
-	private String tel;
-	private String login;
+
+	@Column(nullable = false)
+	private String userName;
+
+	@Column(nullable = false)
 	private String password;
-	// nombre d'emprunt des livre 
+
+	// nombre des livres empruntés
+	@Column(nullable = false)
 	private int nbreEmpr;
 	private String ageCategorie;
 	@OneToMany

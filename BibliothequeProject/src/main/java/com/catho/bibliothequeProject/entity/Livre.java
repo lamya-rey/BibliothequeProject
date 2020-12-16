@@ -10,29 +10,39 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class Comment {
-
+public class Livre {
 	@Column(nullable = false)
 	@Id
 	private Long id;
-
+	
 	@Column(nullable = false)
-	private String message;
-
-	@Column(nullable = true)
 	private String titre;
 	
+	//International Standard Book Number
 	@Column(nullable = false)
+	private String isbn;
+	
+	@Column(nullable = false)
+	private String categorie;
+	
+	/*//nombre d'exemplaires
+	@Column(nullable = false)
+	private int nbreExemp;*/
+	
+	@Column(nullable = true)
 	@ManyToOne
-	private Livre livre;
+	private Utilisateur utilisateur;
+ 
 
 	
-	 
+	
+    
+    
+	
 
 }
