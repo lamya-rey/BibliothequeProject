@@ -6,8 +6,6 @@ import lombok.*;
 
 
 @Entity
-@Data
-@NoArgsConstructor
 public class Comment {
 
 	@Column(nullable = false)
@@ -21,12 +19,54 @@ public class Comment {
 	private String title;
 	
 	@ManyToOne
-	@JoinColumn(name="customerId", nullable = false)
+	@JoinColumn(name="bookId", nullable = false)
 	private Book book;
 	
 	@ManyToOne
 	@JoinColumn(name="userId", nullable = false)
 	private User user;
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public Comment() {
 		super();
