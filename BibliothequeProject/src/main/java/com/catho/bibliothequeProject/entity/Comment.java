@@ -29,9 +29,6 @@ public class Comment {
 	@JoinColumn(name="userId", nullable = false)
 	private User user;
 
-	public Comment() {
-		super();
-	}
 
 	public Comment(Long id, String content, String title, Book book, User user) {
 		super();
