@@ -21,7 +21,7 @@ public class UtilisateurController {
         return userRepository.findAll();
     }
     @GetMapping("/{userId}")
-    public Optional<User> getUserById(@PathVariable("userId") int userId) {
+    public Optional<User> getUserById(@PathVariable Long userId) {
         return userRepository.findById(userId);
     }
 }
