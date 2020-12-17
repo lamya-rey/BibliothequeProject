@@ -9,7 +9,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="entityManagerFactory" />
+          <factory-entry name="entityManagerFactory" value="5ee3b121-9f31-489b-971d-f4ca29a289a2" />
         </datasource-mapping>
         <naming-strategy-map>
           <unit-entry name="entityManagerFactory" />
@@ -128,7 +128,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-rest-core:3.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.2" level="project" />
@@ -140,5 +139,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.11.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.3" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-test:5.3.2" level="project" />
   </component>
 </module>
