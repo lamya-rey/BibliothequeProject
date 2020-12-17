@@ -6,8 +6,9 @@ import lombok.*;
 
 
 @Entity
-@Data
 @NoArgsConstructor
+@Data
+
 public class Comment {
 
 	@Column(nullable = false)
