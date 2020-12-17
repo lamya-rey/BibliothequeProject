@@ -26,6 +26,9 @@ public class Comment {
 	@JoinColumn(name="userId", nullable = false)
 	private User user;
 
+	public Comment() {
+
+	}
 
 
 	public Long getId() {
