@@ -8,7 +8,7 @@ import java.util.*;
 
 @Entity
 @Data
-public class Utilisateur {
+public class User {
 
 	@Column(nullable = false)
 	@Id
@@ -16,10 +16,10 @@ public class Utilisateur {
 	private Long id;
 
 	@Column(nullable = false)
-	private String prenom;
+	private String firstName;
 
 	@Column(nullable = false)
-	private String nom;
+	private String lastName;
 
 	@Column(nullable = false)
 	private String age;
@@ -35,23 +35,26 @@ public class Utilisateur {
 
 	// nombre des livres empruntés
 	@Column(nullable = false)
-	private int nbreEmpr;
-	private String ageCategorie;
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name = "user_id")
-	private Collection<Book> books = new LinkedHashSet<Book>();
-	public Utilisateur(String prenom, String nom, String age, String email, String userName, String password, int nbreEmpr, String ageCategorie) {
-		this.prenom = prenom;
-		this.nom = nom;
+	private int nbrEmpr;
+
+	public User() {
+		super();
+	}
+
+	public User(Long id, String firstName, String lastName, String age, String email, String userName, String password,
+			int nbrEmpr) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.age = age;
 		this.email = email;
 		this.userName = userName;
 		this.password = password;
-		this.nbreEmpr = nbreEmpr;
-		this.ageCategorie = ageCategorie;
+		this.nbrEmpr = nbrEmpr;
 	}
-
-	public Utilisateur() {
-
-	}
+	
+	
+	
+	
 }

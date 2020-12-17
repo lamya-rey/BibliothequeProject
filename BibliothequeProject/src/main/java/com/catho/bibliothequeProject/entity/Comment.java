@@ -15,10 +15,35 @@ public class Comment {
 	private Long id;
 
 	@Column(nullable = false)
-	private String message;
+	private String content;
 
 	@Column(nullable = true)
-	private String titre;
+	private String title;
+	
+	@ManyToOne
+	@JoinColumn(name="customerId", nullable = false)
+	private Book book;
+	
+	@ManyToOne
+	@JoinColumn(name="userId", nullable = false)
+	private User user;
+
+	public Comment() {
+		super();
+	}
+
+	public Comment(Long id, String content, String title, Book book, User user) {
+		super();
+		this.id = id;
+		this.content = content;
+		this.title = title;
+		this.book = book;
+		this.user = user;
+	}
+
+	
+	
+	
 	
 
 	 
