@@ -4,16 +4,15 @@ import javax.persistence.*;
 
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 public class Utilisateur {
 
 	@Column(nullable = false)
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@Column(nullable = false)
@@ -38,7 +37,21 @@ public class Utilisateur {
 	@Column(nullable = false)
 	private int nbreEmpr;
 	private String ageCategorie;
-	@OneToMany
-	@Column(name = "user_id")
-	private Set<Book> emprentedBookList = new HashSet<>();
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name = "user_id")
+	private Collection<Book> books = new LinkedHashSet<Book>();
+	public Utilisateur(String prenom, String nom, String age, String email, String userName, String password, int nbreEmpr, String ageCategorie) {
+		this.prenom = prenom;
+		this.nom = nom;
+		this.age = age;
+		this.email = email;
+		this.userName = userName;
+		this.password = password;
+		this.nbreEmpr = nbreEmpr;
+		this.ageCategorie = ageCategorie;
+	}
+
+	public Utilisateur() {
+
+	}
 }
