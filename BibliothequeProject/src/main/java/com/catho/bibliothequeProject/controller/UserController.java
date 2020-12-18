@@ -1,6 +1,8 @@
 package com.catho.bibliothequeProject.controller;
 
+import com.catho.bibliothequeProject.dao.BookRepository;
 import com.catho.bibliothequeProject.dao.UserRepository;
+import com.catho.bibliothequeProject.entity.Book;
 import com.catho.bibliothequeProject.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,15 +20,18 @@ import java.util.Optional;
 @RequestMapping(path = "/user")
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    public UserRepository userRepository;
+    
+    @Autowired
+    public BookRepository bookRepository;
 
     @GetMapping
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
-    @GetMapping("/{userId}")
-    public Optional<User> getUserById(@PathVariable Long userId) {
-        return userRepository.findById(userId);
+    @GetMapping("/{id}")
+    public Optional<User> getUserById(@PathVariable Long id) {
+        return userRepository.findById(id);
     }
     
     @GetMapping("/{name}")
@@ -44,8 +49,19 @@ public class UserController {
     	userRepository.deleteAll();
     }
     
-    @PutMapping("/{userName}/{title}")
-    public void borrow(@PathVariable String userName,@PathVariable String title) {
+    @PutMapping("/{name}/{title}")
+    public int borrow(@PathVariable String name,@PathVariable String title) {
+    	User foundedUser = userRepository.findByName(name);
+    	Book foundedBook = bookRepository.findByTitle(title);
+    	if (foundedUser.getCategory()!=foundedBook.getCategory() || foundedUser.getNbrEmpr()>3) {
+    		return -1;	
+    	}
+    	else { foundedUser.setNbrEmpr(foundedUser.getNbrEmpr()+1);
+    	       userRepository.save(foundedUser);
+    	       foundedBook.setUser(foundedUser);
+    	       bookRepository.save(foundedBook);
+    		return 1;
+    		}
 	
 	}
     
