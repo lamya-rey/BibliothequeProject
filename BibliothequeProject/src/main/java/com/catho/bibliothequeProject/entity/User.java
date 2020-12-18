@@ -14,7 +14,10 @@ public class User {
 	private String name;
 
 	@Column(nullable = false)
-	private String age;
+	private Long age;
+	
+	@Column(nullable = false)
+	private String category;
 
 	@Column(nullable = false)
 	private String email;
@@ -48,17 +51,27 @@ public class User {
 
 
 
-	public String getAge() {
+	public Long getAge() {
 		return age;
 	}
 
 
 
-	public void setAge(String age) {
+	public void setAge(Long age) {
 		this.age = age;
 	}
+	
+	
 
 
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public String getEmail() {
 		return email;
@@ -100,15 +113,18 @@ public class User {
 		super();
 	}
 
-	public User(Long id, String name, String age, String email, String userName, int nbrEmpr) {
+	public User(Long id, String name, Long age, String category, String email, String userName, int nbrEmpr) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
+		this.category = category;
 		this.email = email;
 		this.userName = userName;
 		this.nbrEmpr = nbrEmpr;
 	}
+
+	
 	
 	
 

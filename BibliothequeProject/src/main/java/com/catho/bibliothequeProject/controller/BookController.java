@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/books")
+@RequestMapping(path = "/book")
 public class BookController {
     @Autowired
     public BookRepository bookRepository;
@@ -39,10 +39,6 @@ public class BookController {
     	bookRepository.deleteById(id);
     }
     
-    @PutMapping("/{userName}/{title}")
-    public int emprunt (@PathVariable String userName,@PathVariable String title) {
-		return 0;
-	}
     
     @PostMapping("/")
     public Book save(@RequestBody Book book) {

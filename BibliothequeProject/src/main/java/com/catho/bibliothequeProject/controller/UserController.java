@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/users")
+@RequestMapping(path = "/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -43,6 +43,11 @@ public class UserController {
     public void  deleteAll(){
     	userRepository.deleteAll();
     }
+    
+    @PutMapping("/{userName}/{title}")
+    public void borrow(@PathVariable String userName,@PathVariable String title) {
+	
+	}
     
     @PostMapping("/")
     public User save(@RequestBody User user) {
