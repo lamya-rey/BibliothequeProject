@@ -9,22 +9,41 @@
 * User
 
 (id, name, age, category, email, userName, nbrEmpr)
+
+Les utilisateurs sont categorises par leur age Enfant < 13, 13 < Ado < 18, 18 < Adulte
+
 * Book 
 
 (id, title, isbn, category, user)
+
+Un livre a une categorie (enfant (0-13 ans), ado (13-18 ans), adulte)
+
 * Comment
 
 (id, content, title, book, user)
 ***
 ##Les API
+
 Pour chaque classe, vous pouvez récupérer tous les objets de ce type dans la base de données, les ajouter, les supprimer ou les modifier.
 
 * Récupérer: /getAll
+
 * Recherche: /findByTitle (pour Book et Comment) ainsi que /findByName (pour User)
+
 * Ajouter: /add/
+
 * Modifier: /update/
+
 * Supprimer: /deleteAll et /delete/{id}
-* Authentification:
+
+* Authentification: 
+
+Un utilisateur ne peut emprunter que 3 livres maximum
+
+Un enfant ne peut pas emprunter un livre "ado" ou "adulte"
+
+Un ado ne peut pas enprunter un livre "adulte"
+
 ***
 ##Utilisation des API avec navigateur:
 
