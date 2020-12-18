@@ -1,5 +1,7 @@
 package com.catho.bibliothequeProject.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -28,6 +30,8 @@ public class User {
 	// nombre des livres empruntés
 	@Column(nullable = true)
 	private int nbrEmpr;
+	
+	
 	
 
 	public Long getId() {
@@ -106,7 +110,8 @@ public class User {
 	public void setNbrEmpr(int nbrEmpr) {
 		this.nbrEmpr = nbrEmpr;
 	}
-
+	
+	
 
 
 	public User() {
@@ -122,8 +127,9 @@ public class User {
 		this.email = email;
 		this.userName = userName;
 		this.nbrEmpr = nbrEmpr;
-	}
+			}
 
+	
 	
 	
 	

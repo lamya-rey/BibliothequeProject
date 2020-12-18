@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/comment")
@@ -24,19 +23,20 @@ public class CommentController {
     public Iterable<Comment> getAllComments() {
         return commentRepository.findAll();
     }
-    @GetMapping("/{id}")
-    public Optional<Comment> getCommentsByCommentId(@PathVariable Long id) {
-        return commentRepository.findById(id);
-    }
     
     @GetMapping("/{title}")
     public Comment findByTitle(@PathVariable String title) {
     	return commentRepository.findByTitle(title);
     }
     
-    @DeleteMapping("/")
+    @DeleteMapping("/{id}")
     public void  deleteById(@PathVariable Long id){
     	commentRepository.deleteById(id);
+    }
+    
+    @DeleteMapping("/")
+    public void  deleteAll(){
+    	commentRepository.deleteAll();
     }
     
     @PostMapping("/")
@@ -46,7 +46,7 @@ public class CommentController {
     
     @PutMapping("/")
     public Comment update(@RequestBody Comment comment) {
-    	return commentRepository.saveAndFlush(comment);
+    	return commentRepository.save(comment);
     }
     
 }

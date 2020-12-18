@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/book")
@@ -24,21 +23,21 @@ public class BookController {
     public Iterable<Book> getAllBooks() {
         return bookRepository.findAll();
     }
-    @GetMapping("/{id}")
-    public Optional<Book> getBookById(@PathVariable Long id) {
-        return bookRepository.findById(id);
-    }
     
     @GetMapping("/{title}")
     public Book findByTitle(@PathVariable String title) {
     	return bookRepository.findByTitle(title);
     }
     
-    @DeleteMapping("/")
+    @DeleteMapping("/{id}")
     public void  deleteById(@PathVariable Long id){
     	bookRepository.deleteById(id);
     }
     
+    @DeleteMapping("/")
+    public void  deleteAll(){
+    	bookRepository.deleteAll();
+    }
     
     @PostMapping("/")
     public Book save(@RequestBody Book book) {
@@ -47,7 +46,7 @@ public class BookController {
     
     @PutMapping("/")
     public Book update(@RequestBody Book book) {
-    	return bookRepository.saveAndFlush(book);
+    	return bookRepository.save(book);
     }
     
 }

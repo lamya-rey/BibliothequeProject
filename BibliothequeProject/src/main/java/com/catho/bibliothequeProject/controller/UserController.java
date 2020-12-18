@@ -25,18 +25,19 @@ public class UserController {
     @Autowired
     public BookRepository bookRepository;
 
-    @GetMapping
+    @GetMapping("/")
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
-    }
-    @GetMapping("/{id}")
-    public Optional<User> getUserById(@PathVariable Long id) {
-        return userRepository.findById(id);
     }
     
     @GetMapping("/{name}")
     public User findByName(@PathVariable String name) {
     	return userRepository.findByName(name);
+    }
+    
+    @GetMapping("/{id}")
+    public Optional<User> getById(@PathVariable Long id) {
+    	return userRepository.findById(id);
     }
     
     @DeleteMapping("/{id}")
@@ -53,7 +54,7 @@ public class UserController {
     public int borrow(@PathVariable String name,@PathVariable String title) {
     	User foundedUser = userRepository.findByName(name);
     	Book foundedBook = bookRepository.findByTitle(title);
-    	if (foundedUser.getCategory()!=foundedBook.getCategory() || foundedUser.getNbrEmpr()>3) {
+    	if (foundedUser.getCategory()!=foundedBook.getCategory() || foundedUser.getNbrEmpr()>=3) {
     		return -1;	
     	}
     	else { foundedUser.setNbrEmpr(foundedUser.getNbrEmpr()+1);
@@ -72,6 +73,6 @@ public class UserController {
     
     @PutMapping("/")
     public User update(@RequestBody User user) {
-    	return userRepository.saveAndFlush(user);
+    	return userRepository.save(user);
     }
 }
