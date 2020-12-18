@@ -59,6 +59,7 @@ public class UserController {
     	else { foundedUser.setNbrEmpr(foundedUser.getNbrEmpr()+1);
     	       userRepository.save(foundedUser);
     	       foundedBook.setUser(foundedUser);
+    	       bookRepository.save(foundedBook);
     		return 1;
     		}
 	
