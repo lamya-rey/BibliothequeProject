@@ -49,7 +49,7 @@ public class UserController {
     	userRepository.deleteAll();
     }
     
-    @PutMapping("/{userName}/{title}")
+    @PutMapping("/{name}/{title}")
     public int borrow(@PathVariable String name,@PathVariable String title) {
     	User foundedUser = userRepository.findByName(name);
     	Book foundedBook = bookRepository.findByTitle(title);
