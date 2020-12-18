@@ -1,6 +1,8 @@
 package com.catho.bibliothequeProject.controller;
 
+import com.catho.bibliothequeProject.dao.BookRepository;
 import com.catho.bibliothequeProject.dao.UserRepository;
+import com.catho.bibliothequeProject.entity.Book;
 import com.catho.bibliothequeProject.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +20,10 @@ import java.util.Optional;
 @RequestMapping(path = "/user")
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    public UserRepository userRepository;
+    
+    @Autowired
+    public BookRepository bookRepository;
 
     @GetMapping
     public Iterable<User> getAllUsers() {
@@ -45,7 +50,17 @@ public class UserController {
     }
     
     @PutMapping("/{userName}/{title}")
-    public void borrow(@PathVariable String userName,@PathVariable String title) {
+    public int borrow(@PathVariable String name,@PathVariable String title) {
+    	User foundedUser = userRepository.findByName(name);
+    	Book foundedBook = bookRepository.findByTitle(title);
+    	if (foundedUser.getCategory()!=foundedBook.getCategory() || foundedUser.getNbrEmpr()>3) {
+    		return -1;	
+    	}
+    	else { foundedUser.setNbrEmpr(foundedUser.getNbrEmpr()+1);
+    	       userRepository.save(foundedUser);
+    	       foundedBook.setUser(foundedUser);
+    		return 1;
+    		}
 	
 	}
     
