@@ -1,10 +1,10 @@
 # BibliothequeProject
-###Bienvenue à notre projet de fin semestre 👋
+#Bienvenue à notre projet de fin semestre 👋
 ***
-#####Réalisé par groupe numéro 11
+##Réalisé par groupe numéro 11
 (Lamya Rayess, Ahlem Fahem, Abdellah Abouhanifa)
 ***
-####Les Classes
+##Les Classes
 * User
 
 (id, name, age, category, email, userName, nbrEmpr)
@@ -15,7 +15,7 @@
 
 (id, content, title, book, user)
 ***
-####Les API
+##Les API
 Pour chaque classe, vous pouvez récupérer tous les objets de ce type dans la base de données, les ajouter, les supprimer ou les modifier.
 
 * Récupérer: /getAll et /getById
@@ -25,7 +25,7 @@ Pour chaque classe, vous pouvez récupérer tous les objets de ce type dans la b
 * Supprimer: /deleteAll et /delete/{id}
 * Authentification:
 ***
-####Utilisation des API avec navigateur:
+##Utilisation des API avec navigateur:
 
 On lance l'application et on démarre notre navigateur Internet.
  
@@ -45,7 +45,7 @@ localhost:8080
   
   Cette requête supprime l'utilisateur qui possède l'ID 3.
   
-  ####Test des API avec Postman :
+  ##Test des API avec Postman :
   
   Toute une collection des tests des api se trouvent dans notre fichier postman.
 
