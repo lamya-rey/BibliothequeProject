@@ -62,7 +62,7 @@ localhost:8080
   
 ##Test des API avec Postman :
   
-Toute une collection des tests des api se trouvent dans notre fichier postman.
+Toute une collection des tests des api dans notre fichier postman qui se trouve dans package api
 
 * Exemple d'un test dans postman:
 
