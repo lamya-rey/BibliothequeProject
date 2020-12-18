@@ -57,7 +57,7 @@ localhost:8080
   
   Par exemple: localhost:8080/user/
   
-  Cette requête récupère toutes les utilisateurs dans la base.
+  Cette requête récupère tout les utilisateurs dans la base.
 ***
   
 ##Test des API avec Postman :
