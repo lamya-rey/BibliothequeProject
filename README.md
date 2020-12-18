@@ -1,5 +1,6 @@
 # BibliothequeProject
 #Bienvenue à notre projet de fin semestre 👋
+(Notre projet a comme objectif de gérer une bibliothèque)
 ***
 ##Réalisé par groupe numéro 11
 (Lamya Rayess, Ahlem Fahem, Abdellah Abouhanifa)
@@ -18,10 +19,10 @@
 ##Les API
 Pour chaque classe, vous pouvez récupérer tous les objets de ce type dans la base de données, les ajouter, les supprimer ou les modifier.
 
-* Récupérer: /getAll et /getById
+* Récupérer: /getAll
 * Recherche: /findByTitle (pour Book et Comment) ainsi que < /findByName (pour User)
-* Ajouter: /add
-* Modifier: /update/{id}
+* Ajouter: /add/
+* Modifier: /update/
 * Supprimer: /deleteAll et /delete/{id}
 * Authentification:
 ***
@@ -35,19 +36,13 @@ localhost:8080
 
 * Si on souhaitez récupérer tous les objets d'une classe. On ajoute la classe à la fin de l'URL.
   
-  Par exemple: localhost:8080/user
+  Par exemple: localhost:8080/user/
   
   Cette requête récupère toutes les utilisateurs dans la base.
   
-* Si on souhaite apporter des modifications à la base de données.
+##Test des API avec Postman :
   
-  Par exemple: localhost:8080/user/delete/3
-  
-  Cette requête supprime l'utilisateur qui possède l'ID 3.
-  
-  ##Test des API avec Postman :
-  
-  Toute une collection des tests des api se trouvent dans notre fichier postman.
+Toute une collection des tests des api se trouvent dans notre fichier postman.
 
 * Exemple d'un test dans postman:
 
