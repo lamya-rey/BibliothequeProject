@@ -2,9 +2,6 @@ package com.catho.bibliothequeProject.entity;
 
 import javax.persistence.*;
 
-import lombok.*;
-
-import java.util.*;
 
 @Entity
 public class User {
@@ -14,7 +11,7 @@ public class User {
 	private Long id;
 
 	@Column(nullable = false)
-	private String Name;
+	private String name;
 
 	@Column(nullable = false)
 	private String age;
@@ -26,7 +23,7 @@ public class User {
 	private String userName;
 
 	// nombre des livres empruntés
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private int nbrEmpr;
 	
 
@@ -40,13 +37,13 @@ public class User {
 
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 
@@ -106,7 +103,7 @@ public class User {
 	public User(Long id, String name, String age, String email, String userName, int nbrEmpr) {
 		super();
 		this.id = id;
-		Name = name;
+		this.name = name;
 		this.age = age;
 		this.email = email;
 		this.userName = userName;

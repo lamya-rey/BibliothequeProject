@@ -2,7 +2,6 @@ package com.catho.bibliothequeProject.entity;
 
 import javax.persistence.*;
 
-import lombok.*;
 
 
 @Entity

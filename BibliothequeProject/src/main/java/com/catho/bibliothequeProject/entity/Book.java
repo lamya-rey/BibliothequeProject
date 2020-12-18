@@ -1,8 +1,5 @@
 package com.catho.bibliothequeProject.entity;
 
-import lombok.*;
-
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -24,7 +21,7 @@ public class Book {
 	private String category;
 	
 	@ManyToOne
-	@JoinColumn(name="userId", nullable = false)
+	@JoinColumn(name="userId", nullable = true)
 	private User user;
 
 

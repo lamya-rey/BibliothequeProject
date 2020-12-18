@@ -2,7 +2,6 @@ package com.catho.bibliothequeProject.controller;
 
 import com.catho.bibliothequeProject.dao.UserRepository;
 import com.catho.bibliothequeProject.entity.User;
-import com.catho.bibliothequeProject.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/users")
-public class UtilisateurController {
+public class UserController {
     @Autowired
     private UserRepository userRepository;
 
@@ -32,12 +31,17 @@ public class UtilisateurController {
     
     @GetMapping("/{name}")
     public User findByName(@PathVariable String name) {
-    	return userRepository.findByTName(name);
+    	return userRepository.findByName(name);
+    }
+    
+    @DeleteMapping("/{id}")
+    public void  deleteById(@PathVariable Long id){
+    	userRepository.deleteById(id);
     }
     
     @DeleteMapping("/")
-    public void  deleteById(@PathVariable Long id){
-    	userRepository.deleteById(id);
+    public void  deleteAll(){
+    	userRepository.deleteAll();
     }
     
     @PostMapping("/")
