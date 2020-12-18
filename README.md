@@ -20,7 +20,7 @@
 Pour chaque classe, vous pouvez récupérer tous les objets de ce type dans la base de données, les ajouter, les supprimer ou les modifier.
 
 * Récupérer: /getAll
-* Recherche: /findByTitle (pour Book et Comment) ainsi que < /findByName (pour User)
+* Recherche: /findByTitle (pour Book et Comment) ainsi que /findByName (pour User)
 * Ajouter: /add/
 * Modifier: /update/
 * Supprimer: /deleteAll et /delete/{id}
@@ -39,6 +39,7 @@ localhost:8080
   Par exemple: localhost:8080/user/
   
   Cette requête récupère toutes les utilisateurs dans la base.
+***
   
 ##Test des API avec Postman :
   
