@@ -29,9 +29,9 @@ public class UserController {
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
-    @GetMapping("/{userId}")
-    public Optional<User> getUserById(@PathVariable Long userId) {
-        return userRepository.findById(userId);
+    @GetMapping("/{id}")
+    public Optional<User> getUserById(@PathVariable Long id) {
+        return userRepository.findById(id);
     }
     
     @GetMapping("/{name}")
