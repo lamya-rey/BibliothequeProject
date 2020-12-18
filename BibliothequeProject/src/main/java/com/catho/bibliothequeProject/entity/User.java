@@ -27,7 +27,7 @@ public class User {
 	@Column(nullable = false)
 	private String userName;
 
-	// nombre des livres empruntés
+	//nombre des livres empruntés
 	@Column(nullable = true)
 	private int nbrEmpr;
 	
