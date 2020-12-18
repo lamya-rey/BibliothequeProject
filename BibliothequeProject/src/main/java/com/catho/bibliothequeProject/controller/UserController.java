@@ -54,9 +54,11 @@ public class UserController {
     public int borrow(@PathVariable String name,@PathVariable String title) {
     	User foundedUser = userRepository.findByName(name);
     	Book foundedBook = bookRepository.findByTitle(title);
-    	if (!foundedUser.getCategory().equals(foundedBook.getCategory()) || foundedUser.getNbrEmpr()>=3) {
-    		return -1;	
-    	}
+    	if((foundedUser.getCategory().equals("enfant") && !foundedBook.getCategory().equals("enfant"))
+                || (foundedUser.getCategory().equals("ado") && foundedBook.getCategory().equals("adulte"))
+                || (foundedUser.getNbrEmpr()>=3)){
+            return -1;
+        }
     	else {
     	    foundedUser.setNbrEmpr(foundedUser.getNbrEmpr()+1);
     	       userRepository.save(foundedUser);
