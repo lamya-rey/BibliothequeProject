@@ -60,7 +60,7 @@ public class UserController {
                 || (foundedUser.getCategory().equals("ado") && foundedBook.getCategory().equals("adulte"))
                 || (foundedUser.getNbrEmpr()>=3)){
             return -1;
-        }
+    	}
     	else {
     	    foundedUser.setNbrEmpr(foundedUser.getNbrEmpr()+1);
     	       userRepository.save(foundedUser);
