@@ -30,7 +30,7 @@ public class UserController {
         return userRepository.findAll();
     }
     
-    @GetMapping("/{name}")
+    @GetMapping("/search/{name}")
     public User findByName(@PathVariable String name) {
     	return userRepository.findByName(name);
     }
@@ -50,10 +50,12 @@ public class UserController {
     	userRepository.deleteAll();
     }
     
+    
     @PutMapping("/{name}/{title}")
     public int borrow(@PathVariable String name,@PathVariable String title) {
     	User foundedUser = userRepository.findByName(name);
     	Book foundedBook = bookRepository.findByTitle(title);
+    	
     	if((foundedUser.getCategory().equals("enfant") && !foundedBook.getCategory().equals("enfant"))
                 || (foundedUser.getCategory().equals("ado") && foundedBook.getCategory().equals("adulte"))
                 || (foundedUser.getNbrEmpr()>=3)){
@@ -64,6 +66,7 @@ public class UserController {
     	       userRepository.save(foundedUser);
     	       foundedBook.setUser(foundedUser);
     	       bookRepository.save(foundedBook);
+    	      
     		return 1;
     		}
 	
