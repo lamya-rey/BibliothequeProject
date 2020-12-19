@@ -57,7 +57,7 @@ public class UserController {
     	Book foundedBook = bookRepository.findByTitle(title);
     	
     	if((foundedUser.getCategory().equals("enfant") && !foundedBook.getCategory().equals("enfant"))
-                || (foundedUser.getCategory().equals("ado") && foundedBook.getCategory().equals("adulte"))
+                || (foundedUser.getCategory().equals("adulte") && foundedBook.getCategory().equals("ado"))
                 || (foundedUser.getNbrEmpr()>=3)){
             return -1;
     	}
