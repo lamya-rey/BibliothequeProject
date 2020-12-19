@@ -1,16 +1,16 @@
 # BibliothequeProject
 #Bienvenue à notre projet de fin semestre 👋
-(Notre projet a comme objectif de gérer une bibliothèque)
+(Notre projet a pour objectif la gestion  d'une bibliothèque)
 ***
 ##Réalisé par groupe numéro 11
 (Lamya Rayess, Ahlem Fahem, Abdellah Abouhanifa)
 ***
-##Les Classes
+##Les models
 * User
 
 (id, name, age, category, email, userName, nbrEmpr)
 
-Les utilisateurs sont categorises par leur age Enfant < 13, 13 < Ado < 18, 18 < Adulte
+Les utilisateurs sont categorisés par leur age Enfant < 13, 13 < Ado < 18, 18 < Adulte
 
 * Book 
 
@@ -24,21 +24,21 @@ Un livre a une categorie (enfant (0-13 ans), ado (13-18 ans), adulte)
 ***
 ##Les API
 
-Pour chaque classe, vous pouvez récupérer tous les objets de ce type dans la base de données, les ajouter, les supprimer ou les modifier.
+Pour chaque model, vous pouvez récupérer tous les donnés, les ajouter, les supprimer ou les modifier.
 
-* Récupérer: /getAll
+* Récupérer: getAll
 
-* Recherche: /findByTitle (pour Book et Comment) ainsi que /findByName (pour User)
+* Recherche: findByTitle (pour Book et Comment) ainsi que findByName (pour User)
 
-* Ajouter: /add/
+* Ajouter: save
 
-* Modifier: /update/
+* Modifier: update
 
-* Supprimer: /deleteAll et /delete/{id}
+* Supprimer: deleteAll et deleteById
 
-* Authentification: 
+* Règles de gestion: 
 
-Un utilisateur ne peut emprunter que 3 livres maximum
+Un utilisateur ne peut emprunter que 3 livres au maximum
 
 Un enfant ne peut pas emprunter un livre "ado" ou "adulte"
 
@@ -47,27 +47,27 @@ Un ado ne peut pas enprunter un livre "adulte"
 ***
 ##Utilisation des API avec navigateur:
 
-On lance l'application et on démarre notre navigateur Internet.
+On exéxutant l'application vous pouvez tester sur votre navigateur ou sur postman.
  
 * url
 
 localhost:8080
 
-* Si on souhaitez récupérer tous les objets d'une classe. On ajoute la classe à la fin de l'URL.
+* Pour récupérer  les objets d'un model. On ajoute le path du model à l'URL.
   
   Par exemple: localhost:8080/user/
   
-  Cette requête récupère tout les utilisateurs dans la base.
+  Cet URL récupère tout les utilisateurs de la base de donnée.
 ***
   
 ##Test des API avec Postman :
   
-Toute une collection des tests des api dans notre fichier postman qui se trouve dans package api
+Toute une collection des tests des api dans notre fichier postman qui se trouve dans le package api.
 
 * Exemple d'un test dans postman:
 
-Si vous souhaitez apporter des modifications à la base de données.
+Si vous souhaitez apporter des modifications à la base de donnée.
 
 Par exemple: DELETE localhost:8080/user/1
 
-Cette requête supprime l'utilisateur qui a l'ID 1.
+Cette requête supprime l'utilisateur de l'ID 1.
