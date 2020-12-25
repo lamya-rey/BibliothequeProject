@@ -14,7 +14,10 @@ public class User {
 	private String name;
 
 	@Column(nullable = false)
-	private Long age;
+	private String about;
+
+	@Column(nullable = false)
+	private String date_creation;
 	
 	@Column(nullable = false)
 	private String category;
@@ -25,17 +28,12 @@ public class User {
 	@Column(nullable = false)
 	private String userName;
 
-	//nombre des livres empruntés
-	@Column(nullable = true)
-	private int nbrEmpr;
-	
-	
-	
+	@Column(nullable = false)
+    private String password;
 
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -44,89 +42,69 @@ public class User {
 	public String getName() {
 		return name;
 	}
-
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
 
-
-	public Long getAge() {
-		return age;
+	public String getAbout() {
+		return about;
 	}
-
-
-
-	public void setAge(Long age) {
-		this.age = age;
-	}
-	
-	
-
+	public void setAbout(String about) { this.about = about; }
 
 
 	public String getCategory() {
 		return category;
 	}
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
+
 	public String getEmail() {
 		return email;
 	}
-
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
 
-
 	public String getUserName() {
 		return userName;
 	}
-
-
-
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
-
-
-	public int getNbrEmpr() {
-		return nbrEmpr;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-
-
-	public void setNbrEmpr(int nbrEmpr) {
-		this.nbrEmpr = nbrEmpr;
+	public String getDate_creation() { return date_creation; }
+	public void setDate_creation(String date_creation) {
+		this.date_creation = date_creation;
 	}
-	
-	
+
 
 
 	public User() {
 		super();
 	}
 
-	public User(Long id, String name, Long age, String category, String email, String userName, int nbrEmpr) {
+	public User(Long id, String name, String about, String category, String email, String userName, String date_creation, String password) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.age = age;
+		this.about= about;
 		this.category = category;
 		this.email = email;
 		this.userName = userName;
-		this.nbrEmpr = nbrEmpr;
+		this.date_creation = date_creation;
+		this.password = password;
 			}
-
 	
 	
 	
