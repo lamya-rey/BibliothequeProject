@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Entity
 public class User {
 
-	@Column(nullable = false)
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(nullable = false)
@@ -21,7 +21,8 @@ public class User {
 
 	@Column(nullable = false)
 	private String email;
-
+	@Column(nullable = false)
+	private String password;
 	@Column(nullable = false)
 	private String userName;
 
@@ -116,13 +117,13 @@ public class User {
 		super();
 	}
 
-	public User(Long id, String name, Long age, String category, String email, String userName, int nbrEmpr) {
+	public User(String name, Long age, String category, String email,String password, String userName, int nbrEmpr) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.category = category;
 		this.email = email;
+		this.password = password;
 		this.userName = userName;
 		this.nbrEmpr = nbrEmpr;
 			}

@@ -1,12 +1,12 @@
 
 
 
-insert into user (id, Name,age, category, email, user_name, nbr_empr) values (1,'amira', 15, 'ado', 'amirafahem1920@gmail.com','amira_fahem', 2);
-insert into user (id, Name,age, category, email, user_name, nbr_empr) values (2,'ahlem', 6, 'enfant', 'ahlem.fahem98@gmail.com','ahlem123',1);
-insert into user (id, Name,age, category, email, user_name, nbr_empr)values (3,'lamya', 23 , 'adulte', 'lamya.rayess1@gmail.com','lamia.rayess', 2);
-insert into user (id, Name,age, category, email, user_name, nbr_empr) values (4,'hanen', 17 , 'ado', 'hanen_mansour@gmail.com','hanen1997', 2);
-insert into user (id, Name,age, category, email, user_name, nbr_empr) values (5,'ines', 10 ,'enfant', 'ines.loulou123@gmail.com','inesnoussa', 3);
-insert into user (id, Name,age, category, email, user_name, nbr_empr) values (6,'test', 10 ,'ado', 'test.loulou123@gmail.com','testnoussa', 0);
+insert into user (Name,age, category, email,password, user_name, nbr_empr) values ('amira', 15, 'ado', 'amirafahem1920@gmail.com','123456789','amira_fahem', 2);
+insert into user (Name,age, category, email,password, user_name, nbr_empr) values ('ahlem', 6, 'enfant', 'ahlem.fahem98@gmail.com','123456789','ahlem123',1);
+insert into user (Name,age, category, email,password, user_name, nbr_empr)values ('lamya', 23 , 'adulte', 'lamya.rayess1@gmail.com','123456789','lamia.rayess', 2);
+insert into user (Name,age, category, email,password, user_name, nbr_empr) values ('hanen', 17 , 'ado', 'hanen_mansour@gmail.com','123456789','hanen1997', 2);
+insert into user (Name,age, category, email,password, user_name, nbr_empr) values ('ines', 10 ,'enfant', 'ines.loulou123@gmail.com','123456789','inesnoussa', 3);
+insert into user (Name,age, category, email,password, user_name, nbr_empr) values ('test', 10 ,'ado', 'test.loulou123@gmail.com','123456789','testnoussa', 0);
 COMMIT;
 
 insert into book (id, title, isbn, category, user_id) values (1,'the fault in our stars', '2-7654-1005-4', 'adulte', 3);
